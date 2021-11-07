@@ -1,0 +1,91 @@
+SQL> @/home/oracle/PLSQLDemo/PLSQLBlockEx4.sql
+Region key: 0, AFRICA                   
+                                       
+Total number of nation: 5
+
+                                                     
+	Nation key	Nation name
+                                                        
+	         0	ALGERIA                  
+                                          
+	         5	ETHIOPIA                 
+                                          
+	        14	KENYA                    
+                                          
+	        15	MOROCCO                  
+                                          
+	        16	MOZAMBIQUE               
+                                          
+Region key: 1, AMERICA                  
+                                       
+Total number of nation: 5
+
+                                                     
+	Nation key	Nation name
+                                                        
+	         1	ARGENTINA                
+                                          
+	         2	BRAZIL                   
+                                          
+	         3	CANADA                   
+                                          
+	        17	PERU                     
+                                          
+	        24	UNITED STATES            
+                                          
+Region key: 2, ASIA                     
+                                       
+Total number of nation: 5
+
+                                                     
+	Nation key	Nation name
+                                                        
+	         8	INDIA                    
+                                          
+	         9	INDONESIA                
+                                          
+	        12	JAPAN                    
+                                          
+	        18	CHINA                    
+                                          
+	        21	VIETNAM                  
+                                          
+Region key: 3, EUROPE                   
+                                       
+Total number of nation: 5
+
+                                                     
+	Nation key	Nation name
+                                                        
+	         6	FRANCE                   
+                                          
+	         7	GERMANY                  
+                                          
+	        19	ROMANIA                  
+                                          
+	        22	RUSSIA                   
+                                          
+	        23	UNITED KINGDOM           
+                                          
+Region key: 4, MIDDLE EAST              
+                                       
+Total number of nation: 5
+
+                                                     
+	Nation key	Nation name
+                                                        
+	         4	EGYPT                    
+                                          
+	        10	IRAN                     
+                                          
+	        11	IRAQ                     
+                                          
+	        13	JORDAN                   
+                                          
+	        20	SAUDI ARABIA             
+                                          
+
+PL/SQL procedure successfully completed.
+
+No errors.
+SQL> spool off

@@ -1,0 +1,38 @@
+-- Declaration (optional)
+declare
+-- All declaration are done here....
+previousRegionKey	REGIONTEST.r_regionkey%type := -1;
+numberOfNation		number(5);
+-- Executable block
+BEGIN
+-- Executable instruction
+   -- Create an implicit cursor to bring in the required data
+   for QRow in ( select r_regionkey, r_name, n_nationkey, n_name
+		 from regiontest, nationtest
+		 where r_regionkey = n_regionkey
+                 and r_name = 'EUROPE'
+		 order by r_regionkey, n_nationkey )
+   loop
+      if (previousRegionKey != QRow.r_regionkey) then -- print report header
+      	-- Report header
+      	-- Get the total number of nation in a region
+      	select count(*) into numberOfNation
+      	from nationtest
+      	where n_regionkey = QRow.r_regionkey;
+      	--
+      	dbms_output.put_line(chr(10) || 'Region key: ' || QRow.r_regionkey || ', ' ||
+			    QRow.r_name || chr(10) );
+	dbms_output.put_line('Total number of nation: ' || numberOfNation || chr(10) || chr(10) );
+      	dbms_output.put_line(chr(9) || 'Nation key' || chr(9) || 'Nation name' || chr(10));
+      	-- reset previous region key
+      	previousRegionKey := QRow.r_regionkey;
+      	-- End of report header
+      end if;
+      --
+      -- Continue to print the nation information
+      dbms_output.put_line(chr(9) || lpad(QRow.n_nationkey,10) || chr(9) || QRow.n_name || chr(10) );
+   end loop;
+-- Exception block (optional)
+END;
+/
+show errors;
