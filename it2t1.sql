@@ -4,19 +4,14 @@ SET FEEDBACK ON
 SET LINESIZE 100 
 SET PAGESIZE 200 
 SET SERVEROUTPUT ON
-/*
-select r_regionkey, r_name, n_nationkey, n_name
-from region, nation
-where r_regionkey = n_regionkey
-order by r_regionkey,n_nationkey;
-*/
+
 declare
 --declare block
 prevRegion REGIONTest.r_regionkey%type := -1;
 
 begin
 --execution block
-for QRow in (select r_regionkey, r_name, n_nationkey, n_name
+for QRow in (select r_regionkey, r_name, listagg(n_name)
 from region, nation
 where r_regionkey = n_regionkey
 order by r_regionkey,n_nationkey)
